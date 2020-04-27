@@ -1,0 +1,23 @@
+{
+  "name": "mi-pokedex",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asus753/mi-pokedex.git"
+  },
+  "author": "Mauro Perez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/asus753/mi-pokedex/issues"
+  },
+  "homepage": "https://github.com/asus753/mi-pokedex#readme",
+  "dependencies": {
+    "bootstrap": "^4.4.1",
+    "jquery": "^3.5.0"
+  }
+}

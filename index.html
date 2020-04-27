@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>pokeAPI</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+        <link href="//fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="src/style.css">        
+    </head>
+
+    <body>
+           
+      <div class="container">
+        <h1 class="centrado" id="titulo">Pokedex</h1>
+        
+        <div class="input-group mb-3">
+          <input id="input-pokemon" type="text" class="form-control" placeholder="Pokemon ej: pikachu" aria-label="Pokemon ej:pikachu" aria-describedby="button-addon2">
+          <div class="input-group-append">
+            <button class="btn btn-outline-primary" type="button" id="boton-buscar">Search</button>
+          </div>
+        </div>
+        
+        <h4 class="centrado" id="pagina">Page 1</h4>
+
+        <div class="row row-cols-1 row-cols-md-5" id="contenedor-cartas-padre">
+
+        </div>
+
+        <h3 class="centrado" id="cargando">Loading...</h3>
+      </div>
+
+        <nav aria-label="Page navigation example" id="navegation">
+            <ul class="pagination justify-content-center">
+              <li class="page-item disabled" id="padre-anterior">
+                <a class="page-link" href="#" id="anterior" >Previous</a>
+              </li>
+              <li class="page-item" id="padre-siguiente">
+                <a class="page-link" href="#" id="siguiente">Next</a>
+              </li>
+            </ul>
+        </nav>
+
+        <script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+        <script type="module" src="src/index.js"></script>
+    </body>
+</html>
+
