@@ -1,4 +1,4 @@
-class CartaPokemon {
+export class CartaPokemon {
   constructor(datosPokemon){
     this.name = datosPokemon.name.toUpperCase()
     this.url = datosPokemon.url
@@ -9,14 +9,14 @@ export class Pokemon {
   constructor(datosPokemon, datosEspeciePokemon){
     this.name = datosPokemon.name
     this.frontImage = datosPokemon.sprites.front_default
-    this.types = obtenerTiposPokemon(datosPokemon.types)
+    this.types = obtenerTiposDelPokemon(datosPokemon.types)
     this.height = datosPokemon.height
     this.weight = datosPokemon.weight
-    this.description = obtenerDescripcionMasActual(datosEspeciePokemon.flavor_text_entries)    
+    this.description = obtenerDescripcionMasActualPokemon(datosEspeciePokemon.flavor_text_entries)    
   }
 }
 
-const obtenerTiposPokemon = (listaDeTipos) => {
+const obtenerTiposDelPokemon = (listaDeTipos) => {
   const tiposDelPokemon = []
   Object.entries(listaDeTipos).forEach(([indice,tipo]) => {
     tiposDelPokemon.push(tipo.type.name)
@@ -24,7 +24,7 @@ const obtenerTiposPokemon = (listaDeTipos) => {
   return tiposDelPokemon
 }
 
-const obtenerDescripcionMasActual = (arrayDescripciones) => {
+const obtenerDescripcionMasActualPokemon = (arrayDescripciones) => {
   let descripcion = ''
   arrayDescripciones.forEach(description => {
     if(description.language.name === 'en' && descripcion === ''){

@@ -11,7 +11,7 @@ import { corregirURL, testURLdañada } from './url.js'
 
 const URLprimera = 'https://pokeapi.co/api/v2/pokemon/?limit=40'
 
-let CantidadTotalPokemons
+const CANTIDAD_TOTAL_DE_POKEMONS = 964
 let URLanterior
 let URLsiguiente
 
@@ -21,13 +21,7 @@ export async function cargarCartas (url) {
     method: 'GET',
     url: url,
     success: respuesta => {
-      if (CantidadTotalPokemons == null) {
-        CantidadTotalPokemons = respuesta.count
-      }
-
-      Object.values(respuesta.results).forEach(e => {
-        agregarCartaPokemon(e)
-      })
+      agregarCartaPokemon(respuesta.results)
 
       manejarBotones(respuesta.previous, respuesta.next)
       URLanterior = respuesta.previous

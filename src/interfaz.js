@@ -1,4 +1,5 @@
 /// <reference types="jquery"/>
+import {CartaPokemon} from './clases.js'
 
 let contadorPagina = 1
 
@@ -8,14 +9,18 @@ export function mostrarCargandoPagina () {
   }
 }
 
-export function agregarCartaPokemon (pokemon) {
-  const nombrePokemon = $(`<div class="col">
-          <div class="card border-primary">
-              <div class="card-body centrado" id="carta-pokemon">${pokemon.name.toUpperCase()}</div>
-          </div>
-      </div>`)
+export function agregarCartaPokemon (arrayPokemons) {
+  arrayPokemons.forEach(pokemon => {
+    const cartaPokemon = new CartaPokemon(pokemon)
 
-  $('#contenedor-cartas-padre').append(nombrePokemon)
+    $('#contenedor-cartas-padre').append(
+      $(`<div class="col">
+          <div class="card border-primary">
+            <div class="card-body centrado" url=${cartaPokemon.url} id="carta-pokemon">${cartaPokemon.name}</div>
+          </div>
+        </div>`)
+    )
+  })
 }
 
 export function manejarBotones (URLanterior, URLsiguiente) {
